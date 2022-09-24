@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <form  onsubmit="saveToLocalStorage(event)">
+          <label for="ExpenseAmount">Expense amount</label>
+          <input type="text" id="exp" />
+          <label for="ChooseCategory">Choose Category</label>
+          <select name="chooseCategory" id="cat">
+            <option value="education">Education</option>
+            <option value="Entertainment">Entertainmanent</option>
+            <option value="Movie">Movie</option>
+            <option value="Travel">Travel</option>
+            <option value="illness">illness</option>
+          </select>
+          <label for="Description"> Description</label>
+          <input type="text" name="Description" id="desc" />
+          <button>Submit</button>
+        </form>
+        <ul id="expenseList"></ul>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+        <script src="taskp.js">
+     
+        </script>
+
+    </body>
+</html>
