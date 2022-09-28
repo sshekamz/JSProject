@@ -1,5 +1,6 @@
 // network call 
 async function saveToCrud(event){
+    try {
     event.preventDefault();
     const amount = event.target.amt.value;
     const category = event.target.cat.value;
@@ -12,7 +13,7 @@ async function saveToCrud(event){
     };
     //console.log(obj);
     
-    try {
+    
         let post= await axios.post("https://crudcrud.com/api/869f7f9c0a504b748b949b1f7e169432/expenseTracker",obj)
         showExpense(post.data);
     } catch (error) {
@@ -72,9 +73,9 @@ function showExpense(expense){
 //   }
 
   async function deleteExpense(expId){
-
-    let deletep= await axios.delete(`https://crudcrud.com/api/869f7f9c0a504b748b949b1f7e169432/expenseTracker/${expId}`)
     try {
+    let deletep= await axios.delete(`https://crudcrud.com/api/869f7f9c0a504b748b949b1f7e169432/expenseTracker/${expId}`)
+    
         removeExpenseFromScreen(expId)
     } catch (error) {
         console.log(error);
